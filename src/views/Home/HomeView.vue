@@ -10,7 +10,8 @@
         <p v-if="!searchError && mapBoxSearchResults.length === 0">Nenhum resultado encontrado, tente um termo diferente.
         </p>
         <template v-else>
-          <li v-for="searchResult in mapBoxSearchResults" :key="searchResult.id" class="py-2 cursor-pointer">
+          <li v-for="searchResult in mapBoxSearchResults" :key="searchResult.id"
+           @click="previewCity(searchResult)" class="py-2 cursor-pointer">
             {{ searchResult.place_name }}
           </li>
         </template>
